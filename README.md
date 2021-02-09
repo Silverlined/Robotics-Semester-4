@@ -2,8 +2,8 @@
 An interface class providing access to all the necessary robot functionalities.
 
 ## Contents
-1. [API Reference](#API%20Reference)
-2. [Extra Material](#Extra%20Material)
+1. [API Reference](<#API Reference>)
+2. [Extra Material](<#Extra Material>)
 
 ## API Reference
 ### Methods:
