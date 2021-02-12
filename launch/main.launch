@@ -1,0 +1,51 @@
+<launch>
+
+    <!-- Load parameters that match the correct
+         mcu connections -->
+    <group ns="zoef">
+        <rosparam file="$(find zoef_ros_package)/config/zoef_nano_config.yaml"/>
+    </group>
+
+    <!-- Telemetrix node to start all services and topics
+         for the sensors and actuators connected to the
+         mcu -->
+    <node name="zoef_telemetrix_zoef" output="screen"
+          pkg="zoef_ros_package"
+          type="ROS_telemetrix_api.py"/>
+
+    <!-- ROS control hardware interface for differential
+         drive robot. -->
+    <node name="zoef_base_node" output="screen"
+          pkg="zoef_ros_package"
+          type="zoef_ros_package_node"/>
+
+    <!-- <node name="my_robot_camera"
+          pkg="zoef_ros_package"
+          type="camera.py" output="screen"/> -->
+
+    <!-- <node name="zoef_navigation"
+          pkg="zoef_ros_package"
+          type="navigation.py" output="screen"/> -->
+
+    <!-- Load controller config -->
+    <rosparam command="load" file="$(find zoef_ros_package)/config/my_robot_common.yaml"/>
+
+    <node name="controller_spawner"
+          pkg="controller_manager"
+          type="spawner"
+          output="screen"
+          args="mobile_base_controller"/>
+
+    <!-- Start the websocket server -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+
+  <!-- TODO: use ROS usbcam and openCV bridge
+  <node name="webcam" pkg="usb_cam" type="usb_cam_node">
+     <param name="pixel_format" value="yuyv"/>
+  </node>
+
+  <node name="web_video_server" pkg="web_video_server" type="web_video_server"/>
+  -->
+
+</launch>
