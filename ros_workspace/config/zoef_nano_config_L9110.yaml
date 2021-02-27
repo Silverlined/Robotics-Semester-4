@@ -1,0 +1,63 @@
+device:
+  zoef:
+    type: breadboard
+    mcu: nano
+distance:
+  left:
+    name: left
+    device: zoef
+    pins:
+      trigger: 7
+      echo: 8
+  right:
+    name: right
+    device: zoef
+    pins:
+      trigger: 11
+      echo: 12
+  front:
+    name: front
+    device: zoef
+    pins:
+      trigger: 14
+      echo: 15
+  back:
+    name: back
+    device: zoef
+    pins:
+      trigger: 16
+      echo: 17
+encoder:
+  left:
+    name: left
+    device: zoef
+    pins:
+      pin: 2            # pin needs interrupt support
+    ticks_per_wheel: 20
+  right:
+    name: right
+    device: zoef
+    pins:
+      pin: 3            # pin needs interrupt support
+    ticks_per_wheel: 20
+led:
+  device: zoef
+  pins:
+    pin: 13             # pin needs PWM
+motor:
+  left:
+    name: left
+    device: zoef
+    pins:
+      1a: 5         # pin needs PWM
+      1b: 6        # pin needs PWM
+  right:
+    name: right
+    device: zoef
+    pins:
+      1a: 9        # pin needs PWM      
+      1b: 10        # pin needs PWM
+#left_motor: left_motor
+#right_motor: right_motor
+#wheel_radius: 0.065
+#wheel_seperation: 0.13
