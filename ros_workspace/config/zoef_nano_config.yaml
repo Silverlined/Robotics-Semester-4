@@ -40,10 +40,10 @@ encoder:
     pins:
       pin: 3            # pin needs interrupt support
     ticks_per_wheel: 20
-servo:
-  device: zoef
-  pins:
-    pin: 10             # pin needs PWM
+#servo:
+#  device: zoef
+#  pins:
+#    pin: 10             # pin needs PWM
 led:
   device: zoef
   pins:
