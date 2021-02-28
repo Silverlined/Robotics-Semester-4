@@ -1,15 +1,17 @@
 #!/usr/bin/env python3.8
-import Robot_API.Robot
+from Robot_API import Robot, createRobot
 
-my_robot = Robot_API.Robot.createRobot()
+my_robot = createRobot()
 speed_left = 0
 speed_right = 0
 
 while True:
-    elapsed_time = my_robot.getTimestampt()
+    elapsed_time = my_robot.getTimestamp()
     distance_front = my_robot.getDistance("front")
     encoder_left = my_robot.getEncoder("left")
     encoder_right = my_robot.getEncoder("right")
+    print(encoder_left)
+    print(distance_front)
 
     if speed_left == 0 and speed_right == 0:
         speed_left = 20

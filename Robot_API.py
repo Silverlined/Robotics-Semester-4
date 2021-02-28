@@ -360,7 +360,7 @@ def createRobot():
     
     Usage
     ----------
-        my_robot = Robot_API.Robot.createRobot()
+        my_robot = createRobot()
     """
 
     global zoef
