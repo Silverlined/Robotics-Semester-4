@@ -3,6 +3,7 @@ An interface class providing access to all the necessary robot functionalities.
 
 ## Contents
 1. [API Reference](#API-Reference)
+2. [Getting Started](#Getting-Started)
 2. [Extra Material](#Extra-Material)
 
 ## API Reference
@@ -200,6 +201,17 @@ An interface class providing access to all the necessary robot functionalities.
         Usage
         ----------
             my_robot.stop()
+
+## Getting Started
+In this project, you will be using a robot, called Zoef, designed at TU Delft. The interface uses ROS to communicate to different parts of the robot and Telemetrix4Arduino to communicate to the microcontroller.
+
+### Installing the Zoef Image
+To install the Zoef interface you will need to:
+
+1. **Download** the image, called zoef_RASPBERRY.zip, on your computer from the following [link](https://surfdrive.surf.nl/files/index.php/s/fXCFNj4U762kTT6).
+2. **Flash** the image onto the SD card using [Etcher](https://www.balena.io/etcher/). (Note: ignore failure error after validation)
+3. **Insert** the newly flashed SD card into the Raspberry Pi and **power it on**.
+
 
 ## Extra Material
 <img src="res/Arduino-Nano-Pinout.png" width="720">
