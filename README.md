@@ -15,7 +15,7 @@ An interface class providing access to all the necessary robot functionalities.
 
         Usage
         ----------
-            my_robot = Robot_API.Robot.createRobot()
+            my_robot = createRobot()
 </t>
 
     getTimestamp()
