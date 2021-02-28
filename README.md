@@ -333,4 +333,6 @@ robot.setMotorSpeed("right", 100)
 ```
 
 ## Extra Material
+[Control of Mobile Robots](https://youtube.com/playlist?list=PLp8ijpvp8iCvFDYdcXqqYU5Ibl_aOqwjr)
+
 <img src="res/Arduino-Nano-Pinout.png" width="720">
