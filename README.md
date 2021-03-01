@@ -336,3 +336,4 @@ robot.setMotorSpeed("right", 100)
 [Control of Mobile Robots](https://youtube.com/playlist?list=PLp8ijpvp8iCvFDYdcXqqYU5Ibl_aOqwjr)
 
 <img src="res/Arduino-Nano-Pinout.png" width="720">
+<img src="res/Zoef_Schematic.png" width="720">
