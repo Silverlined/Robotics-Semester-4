@@ -244,6 +244,24 @@ wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master
 sudo systemctl start fix_resolv.service
 sudo systemctl enable fix_resolv.service 
 ```
+- Unable to retrieve data from Ultrasonic sensor:
+> During setup of the ultrasonic sensors, you will come across a runtime exception. The predefined GetDistance message in zoef\_msgs expects to receive data of type int32, however, Range from sensor_msgs (which is used in the ROS\_telemetrix\_api) returns data of type float32. That is why you have to change the data type of GetDistance.srv in zoef\_msgs to float32 and re-build the ROS workspace (re-build is necessary because we are editing ROS messages):
+```
+cd ~/zoef_ws/src/zoef_msgs/srv/
+sudo nano GetDistance.srv
+# Change int32 to float32, save & exit
+Ctrl + X
+```
+```
+cd ~/zoef_ws/
+mv /build ..
+mv /devel .. 
+```
+> Essentially, moving the old build files away from the workspace, you could also remove them completely, but for now just move them in case we need to backup
+```
+catkin_make
+```
+> **Repeat catking_make several times**, until the process reaches 100%. For some reason building runs into erros which are resolved when re-initiated. 
 ### Uploading Telemetrix to the Arduino
 Once you have installed the image, you will have all the files needed for the robot to work at `~/zoef_ws/src/zoef_ros_package`. In order to control the Arduino via ROS, the Telemetrix4Arduino code first needs to be uploaded to the microcontroller:
 > Note: Telemetrix4Arduino is used to collect data from the microcontroller and transmit it to the Raspberry. In this way, the microcontroller can be controlled remotely.
