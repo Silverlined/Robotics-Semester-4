@@ -4,7 +4,8 @@ An interface class providing access to all the necessary robot functionalities.
 ## Contents
 1. [API Reference](#API-Reference)
 2. [Getting Started](#Getting-Started)
-2. [Extra Material](#Extra-Material)
+3. [Extra Material](#Extra-Material)
+3. [FAQ](#FAQ)
 
 ## API Reference
 ### Methods:
@@ -355,3 +356,8 @@ robot.setMotorSpeed("right", 100)
 
 <img src="res/Arduino-Nano-Pinout.png" width="720">
 <img src="res/Zoef_Schematic.png" width="720">
+
+## FAQ
+**Question:** Are there enough digital pins on the Arduino Nano?
+
+**Answer:** The Arduino Nano dev board has 12 digital I/O pins denoted with D2~D13 (6 of which are PWM capable). There are also 8 analog pins (6 of which can be used as digital I/O). So, in the end, you actually have 18 digital pins available. 
