@@ -237,7 +237,8 @@ Ctrl + S    # Save the file
 Ctrl + X    # Exit the file
 ```
 ```
-cat /etc/hostname (Shows the ID)
+# Display the ID
+cat /etc/hostname
 ```
 - Temporary failure in name resolution:
 ```
