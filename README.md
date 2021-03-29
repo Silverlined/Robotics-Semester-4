@@ -238,6 +238,8 @@ cat /etc/hostname (Shows the ID)
 ```
 - Temporary failure in name resolution:
 ```
+echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf 
+sudo systemctl restart systemd-resolved.service
 cd ~
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/systemd_services/fix_resolv.sh
 cd /etc/systemd/system/
