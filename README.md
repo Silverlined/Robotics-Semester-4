@@ -233,18 +233,26 @@ sudo nano /etc/hosts
 127.0.0.1     localhost
 127.0.0.1     zoef
 127.0.1.1     Zoef_XXXXXX (Substitute XXXXXX for the ID of your robot)
-Ctrl + S    (Save the file)
-Ctrl + X    (Exit the file)
+Ctrl + S    # Save the file
+Ctrl + X    # Exit the file
 ```
 ```
 cat /etc/hostname (Shows the ID)
 ```
 - Temporary failure in name resolution:
 ```
+# Fix internet access issue (temporary)
 echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf 
 sudo systemctl restart systemd-resolved.service
+
+# Download shell script which can call the same commands automatically
 cd ~
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/systemd_services/fix_resolv.sh
+
+# Make it executable
+sudo chmod +x fix_resolv.sh 
+
+# Create a systemd service to call the script after reboot
 cd /etc/systemd/system/
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/systemd_services/fix_resolv.service
 sudo systemctl start fix_resolv.service
@@ -283,7 +291,9 @@ cd /usr/local/src/zoef/zoef_arduino
 In order to control the Arduino via ROS it is also needed to specify how the robot hardware is connected to the microcontroller: 
 ```
 cd /usr/local/src/zoef/zoef_ros_package/config
-rm zoef_nano_config.yaml (Remove the old file)
+# Remove old file
+rm zoef_nano_config.yaml
+# Download new version
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/ros_workspace/config/zoef_nano_config_L9110.yaml
 ```
 > Note: This file gives information to ROS about the pinout to different sensors and actuators. 
@@ -303,7 +313,7 @@ wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master
 cd /usr/local/src/zoef/zoef_ros_package/scripts
 rm ROS_telemetrix_api.py
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/ros_workspace/scripts/ROS_telemetrix_api.py
-sudo chmod +x ROS_telemetrix_api.py (Make it executable)
+sudo chmod +x ROS_telemetrix_api.py
 ```
 > Note: This file establishes a connection between the different ROS nodes and Telemtrix4Arduino. It is the core file that specifies the inner workings of the system and initiates control over the microcontroller. 
 
