@@ -241,7 +241,7 @@ cat /etc/hostname (Shows the ID)
 ```
 - Temporary failure in name resolution:
 ```
-# Fix internet access issue (temporary)
+# Fix internet access issue
 echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf 
 sudo systemctl restart systemd-resolved.service
 
@@ -263,7 +263,11 @@ sudo systemctl enable fix_resolv.service
 ```
 cd ~/zoef_ws/src/zoef_msgs/srv/
 sudo nano GetDistance.srv
+
 # Change int32 to float32, save & exit
+---
+float32 data
+
 Ctrl + S
 Ctrl + X
 ```
