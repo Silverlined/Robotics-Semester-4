@@ -233,7 +233,10 @@ sudo nano /etc/hosts
 127.0.0.1     localhost
 127.0.0.1     zoef
 127.0.1.1     Zoef_XXXXXX (Substitute XXXXXX for the ID of your robot)
-
+Ctrl + S    (Save the file)
+Ctrl + X    (Exit the file)
+```
+```
 cat /etc/hostname (Shows the ID)
 ```
 - Temporary failure in name resolution:
@@ -253,6 +256,7 @@ sudo systemctl enable fix_resolv.service
 cd ~/zoef_ws/src/zoef_msgs/srv/
 sudo nano GetDistance.srv
 # Change int32 to float32, save & exit
+Ctrl + S
 Ctrl + X
 ```
 ```
