@@ -241,6 +241,7 @@ Ctrl + X    # Exit the file
 cat /etc/hostname
 ```
 - Temporary failure in name resolution:
+> Note: Connect to a network with internet access before attempting to resolve the issues.
 ```
 # Fix internet access issue
 echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf 
@@ -255,7 +256,7 @@ sudo chmod +x fix_resolv.sh
 
 # Create a systemd service to call the script after reboot
 cd /etc/systemd/system/
-wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/systemd_services/fix_resolv.service
+sudo wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/systemd_services/fix_resolv.service
 sudo systemctl start fix_resolv.service
 sudo systemctl enable fix_resolv.service 
 ```
@@ -287,8 +288,8 @@ Once you have installed the image, you will have all the files needed for the ro
 > Note: Telemetrix4Arduino is used to collect data from the microcontroller and transmit it to the Raspberry. In this way, the microcontroller can be controlled remotely.
 ```
 cd /usr/local/src/zoef/zoef_arduino
-./run.sh build_nano Telemetrix4Arduino
-./run.sh upload_nano Telemetrix4Arduino
+./run.sh build_nano_old Telemetrix4Arduino
+./run.sh upload_nano_old Telemetrix4Arduino
 ```
 > *run.sh is a bash script which makes use of arduino-cli to compile and upload the Telemetrix4Arduino sketch to an Arduino Nano.*
 
