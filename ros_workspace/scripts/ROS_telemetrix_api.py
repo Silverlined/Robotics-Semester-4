@@ -255,12 +255,6 @@ async def handle_set_led_value(req):
     return SetLEDValueResponse(True)
 
 
-async def handle_set_servo_angle(req):
-    servo = rospy.get_param("/zoef/servo")
-    await board.servo_write(get_pin_numbers(servo)["pin"], req.angle)
-    return SetServoAngleResponse(True)
-
-
 import nest_asyncio
 
 nest_asyncio.apply()
