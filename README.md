@@ -35,7 +35,7 @@ In the first connection you will see the warning message "The authenticity of ho
 - **Wireless connection**: It is possible to configure the Raspberry Pi to connect to your WiFi via the web interface of Zoef. To do that, while being connected to the Zoef_”XXXXX” network, open your browser and type in the IP address of the board: 192.168.42.1
 The interface is in Dutch, but that should not be a problem. Navigate to the “Netwerk” section and fill in your Wi-Fi credentials. Click the green button. The board will then restart and connect to your Wi-Fi. Connect your computer back to your own WiFi network and wait a couple of minutes for the Zoef Raspberry Pi to boot-up and connect to your WiFi. Then, open a terminal and run `ssh zoef@192.168.42.1` to connect to the Zoef Raspberry Pi via WiFi.
 
-##Necessary fixes
+## Necessary fixes
 The fixes below are necessary to solve a few issues and for the Zoef board to have internet access.
 
 > *Some of the following steps require Internet access, so make sure to connect your board to your network via Ethernet or Wi-Fi, as described above.*
