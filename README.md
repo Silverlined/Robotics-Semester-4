@@ -258,7 +258,7 @@ Robot_API is a Python interface class that provides access to all robot function
     getDistance(sensor)
         Description
         ----------
-        Returns the calculated distance for the given ultrasound sensor.
+        Returns the calculated distance in centimeters for the given ultrasound sensor.
 
         Parameters
         ----------
@@ -273,7 +273,7 @@ Robot_API is a Python interface class that provides access to all robot function
     getEncoder(sensor)
         Description
         ----------
-        Returns data from an encoder
+        Returns data from an encoder: every encoder pulse increments the counter
 
         Parameters
         ----------
