@@ -182,13 +182,9 @@ mkdir /home/zoef/python_controllers
 cd /home/zoef/python_controllers
 wget -L https://raw.githubusercontent.com/Silverlined/Robotics-Semester-4/master/Robot_API.py
 ```
-Once you have the `Robot_API.py` file, you can import it and use it in any of your new scripts. For it to work, you always need to execute the `hw_control.launch` first:
 
-```
-roscd zoef_ros_package/launch
-roslaunch hw_control.launch
-```
-Then, in a new terminal, you can run your code. A simple example is provided below:
+5. Write your own Python program:
+Once you have the `Robot_API.py` file, you can import it and use it in any of your new scripts. A simple example is provided below:
 
 ```
 #!/usr/bin/env python3.8
@@ -203,8 +199,7 @@ while True:
    robot.setMotorSpeed("right", 100)
 ...
 ```
-
-To run this code, create a .py file, copy the code to it, and run it. For that, open a Zoef terminal and execute the commands:
+To run this code, create a file called `my_program.py` and copy the code to it. For that, open a Zoef terminal and execute the commands:
 
 ```
 # Navigate to the scripts folder:
@@ -213,10 +208,18 @@ cd /home/zoef/python_controllers
 touch my_program.py
 nano my_program.py
 # Paste the program into the file, save it (CTRL+S) and exit (CTRL+X)
-# Then, execute your program:
+```
+To  execute your program, run the following command in a terminal:
+```
 python3.8 my_program.py
 ```
-> Note: when you run your program, make sure that `hw_control.launch` is running in another Zoef terminal. Otherwise, the Robot_API will fail to run ROS commands and you will get an error.
+> **Note: when you run your program, make sure that `hw_control.launch` is running in another Zoef terminal. Otherwise, the Robot_API will fail to run ROS commands and you will get an error.**
+To execute the `hw_control.launch`, run the following in a separate terminal:
+```
+roscd zoef_ros_package/launch
+roslaunch hw_control.launch
+```
+So, you will always have at least 2 terminal windows: one running `hw_control.launch` and another running your code.
 
 ## Extra Material
 Some material that you might find useful:
@@ -230,7 +233,9 @@ Some material that you might find useful:
 **Answer:** The Arduino Nano dev board has 12 digital I/O pins denoted with D2~D13 (6 of which are PWM capable). There are also 8 analog pins (6 of which can be used as digital I/O). So, in the end, you actually have 18 digital pins available.
 
 ## Robot_API Reference
-Robot_API is a Python interface class that provides access to all robot functionalities. You can use it to control the speed of the motors, read the sensors, or access other I/O pins. Below you find an explanation of the methods provided.
+Robot_API is a Python interface class that provides access to all robot functionalities. You can use it to control the speed of the motors, read the sensors, or access other I/O pins. You should **not** modify the `Robot_API.py` file. Instead, in your program you can add `import Robot_API` to have access to its functions.
+
+Below you find an explanation of the methods provided.
 
 ### Methods:
 
